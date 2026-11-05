@@ -1,4 +1,9 @@
 # El Esquema de Validación (Pydantic)
+"""
+Este esquema asegurará que la API rechace cualquier dato físico imposible
+(por ejemplo, límites negativos) antes de que toque tu lógica de Data Science.
+"""
+
 from pydantic import BaseModel, Field
 
 class AtterbergRequest(BaseModel):
