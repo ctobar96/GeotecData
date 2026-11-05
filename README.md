@@ -1,6 +1,6 @@
-# GeotData Pipeline — Análisis Geotécnico y Geoespacial
+# GeotecData Pipeline — Análisis Geotécnico y Geoespacial
 
-GeotData Pipeline es un proyecto orientado a integrar conocimientos de Ingeniería Civil Geológica, Data Engineering, Data Science y Machine Learning para el procesamiento, análisis y visualización de información geológica y geotécnica.
+GeotecData Pipeline es un proyecto orientado a integrar conocimientos de Ingeniería Civil Geológica, Data Engineering, Data Science y Machine Learning para el procesamiento, análisis y visualización de información geológica y geotécnica.
 
 El proyecto busca desarrollar un flujo reproducible de procesamiento de datos que permita gestionar información proveniente de ensayos de mecánica de suelos, investigaciones geotécnicas y fuentes cartográficas.
 
