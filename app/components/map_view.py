@@ -5,7 +5,7 @@ from pathlib import Path # Permite manejar rutas de archivos de manera independi
 def create_base_map(boreholes_path: Path) -> folium.Map:
     """Genera el visor geoespacial base con capas intercambiables y marcadores."""
     # Coordenadas iniciales por defecto (Zona Sur / Archipiélago de Chiloé)
-    m = folium.Map(location=[-42.628, -73.971], zoom_start=50, tiles="cartodbpositron")
+    m = folium.Map(location=[-42.628, -73.971], zoom_start=9, tiles="cartodbpositron")
     
     # Capa base alternativa (Satélite) // Esta sección incorpora una segunda cartografía al mapa.
     folium.TileLayer(
