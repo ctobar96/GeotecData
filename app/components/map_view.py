@@ -20,9 +20,9 @@ def create_base_map(boreholes_path: Path) -> folium.Map:
     if boreholes_path.exists() and boreholes_path.stat().st_size > 0:
         try:
             df = pd.read_csv(boreholes_path)
-            if 'latitud' in df.columns and 'longitud' in df.columns:
+            if 'latitud' in df.columns and 'longitud' in df.columns: # Antes de representar los sondajes, verifica que existan las columnas necesarias para localizar cada punto.
                 for _, row in df.iterrows():
-                    popup_html = f"<b>ID:</b> {row.get('id', 'N/A')}<br><b>Tipo:</b> {row.get('tipo', 'Sondaje')}"
+                    popup_html = f"<b>ID:</b> {row.get('id', 'N/A')}<br><b>Tipo:</b> {row.get('tipo', 'Sondaje')}" # Aquí construyes una pequeña ventana informativa en HTML.
                     folium.Marker(
                         location=[row['latitud'], row['longitud']],
                         popup=folium.Popup(popup_html, max_width=200),
