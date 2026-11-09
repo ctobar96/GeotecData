@@ -1,19 +1,19 @@
-import folium
-import pandas as pd
-from pathlib import Path
+import folium # Permite crear mapas interactivos con Leaflet.js
+import pandas as pd # Permite manipular y analizar datos tabulares
+from pathlib import Path # Permite manejar rutas de archivos de manera independiente del sistema operativo
 
 def create_base_map(boreholes_path: Path) -> folium.Map:
     """Genera el visor geoespacial base con capas intercambiables y marcadores."""
     # Coordenadas iniciales por defecto (Zona Sur / Archipiélago de Chiloé)
     m = folium.Map(location=[-42.628, -73.971], zoom_start=9, tiles="cartodbpositron")
     
-    # Capa base alternativa (Satélite)
+    # Capa base alternativa (Satélite) // Esta sección incorpora una segunda cartografía al mapa.
     folium.TileLayer(
-        tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-        attr='Esri',
-        name='Satélite Esri',
-        overlay=False,
-        control=True
+        tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', # Dirección desde donde se obtienen las imágenes satelitales.
+        attr='Esri',    # Atribución de la fuente de datos (Esri)
+        name='Satélite Esri',   # Nombre que aparecerá en el control de capas para esta capa base.
+        overlay=False,          # Indica que es un mapa base alternativo, no una capa superpuesta.
+        control=True            # Permite seleccionarlo desde el control de capas.
     ).add_to(m)
 
     # Ingesta de sondajes (Manejo seguro por si el archivo está vacío)
