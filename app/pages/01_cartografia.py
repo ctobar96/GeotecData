@@ -48,4 +48,9 @@ if map_data and map_data.get("last_object_clicked"):
     st.success(f"**Coordenada inspeccionada:** Latitud {lat:.5f}, Longitud {lng:.5f}")
     
     # Simulación de conexión futura con FastAPI y XGBoost
-    with st.expander("Ver resultados geotécnicos
+    with st.expander("Ver resultados geotécnicos de esta coordenada"):
+        st.dataframe({
+            "Profundidad (m)": [5.0, 10.0, 15.0],
+            "FS Licuación (XGBoost)": [1.2, 0.85, 2.1],
+            "Tipo Suelo": ["SM", "SP-SM", "ML"]
+        })
