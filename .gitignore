@@ -1,0 +1,31 @@
+# Entornos virtuales y caché
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Archivos de datos pesados (mantener estructura con .gitkeep si se desea)
+data/raw/*.xlsx
+data/raw/*.csv
+data/interim/*
+data/processed/*
+
+# Artefactos de Machine Learning
+models/*.pkl
+models/*.json
+api/models/*.pkl
+api/models/*.json
+
+# Secretos y configuración de infraestructura
+.env
+.env.*
+*.tfvars
+*.tfstate
+*.tfstate.backup
+
+# Logs y SO
+*.log
+.DS_Store
