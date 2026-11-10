@@ -37,8 +37,13 @@ with st.spinner("Renderizando modelo cartográfico..."):
     # Instanciar el mapa desde el componente
     folium_map = create_base_map(BOREHOLES_FILE)
     
-    # Mostrar el mapa capturando eventos de clic
-    map_data = st_folium(folium_map, width=1300, height=600, returned_objects=["last_object_clicked"])
+    # Renderizado responsivo para evitar recortes de interfaz
+    map_data = st_folium(
+        folium_map, 
+        use_container_width=True, 
+        height=600, 
+        returned_objects=["last_object_clicked"]
+    )
 
 # 5. Panel de Información Dinámica (Reacciona al mapa)
 if map_data and map_data.get("last_object_clicked"):
